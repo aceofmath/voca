@@ -46,6 +46,13 @@
             "eng": "pencil",
             "kor": "연필",
             "isDone": false
+        },
+        {
+            "id": 7,
+            "day": 1,
+            "eng": "pen",
+            "kor": "펜",
+            "isDone": false
         }
     ]
 }
