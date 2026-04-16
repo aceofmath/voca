@@ -1,17 +1,27 @@
-import dummy from "../db/data.json";
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { supabase } from "../supabaseClient";
 import Word from "./Word";
 
 export default function Day() {
     const { day } = useParams();
-    const wordList = dummy.words.filter((word) => word.day === Number(day));
+    const [words, setWords] = useState([]);
+
+    useEffect(() => {
+        const fetchWords = async () => {
+            const { data, error } = await supabase.from("words").select("*").eq("day", day);
+
+            if (!error) setWords(data);
+        };
+        fetchWords();
+    }, [day]);
 
     return (
         <>
             <h2>Day {day}</h2>
             <table>
                 <tbody>
-                    {wordList.map((word) => (
+                    {words.map((word) => (
                         <Word word={word} key={word.id} />
                     ))}
                 </tbody>
