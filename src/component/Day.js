@@ -18,8 +18,8 @@ export default function Day() {
 
     return (
         <>
-            <h2>Day {day}</h2>
-            <table>
+            <h2 className="mb-3">Day {day}</h2>
+            <table className="table table-hover border">
                 <tbody>
                     {words.map((word) => (
                         <Word word={word} key={word.id} />

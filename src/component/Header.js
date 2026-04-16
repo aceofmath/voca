@@ -2,18 +2,20 @@ import { Link } from "react-router-dom";
 
 export default function Header() {
     return (
-        <div className="header">
-            <h1>
-                <Link to="/">영단어</Link>
-            </h1>
-            <div className="menu">
-                <Link to="/create_word" className="link">
-                    단어 추가
+        <nav className="navbar navbar-expand-lg navbar-light bg-light fixed-top border-bottom px-3 shadow-sm">
+            <div className="container">
+                <Link className="navbar-brand h1 mb-0" to="/">
+                    영단어장
                 </Link>
-                <Link to="/create_day" className="link">
-                    Day 추가
-                </Link>
+                <div className="d-flex">
+                    <Link to="/create_word" className="btn btn-outline-primary me-2">
+                        단어 추가
+                    </Link>
+                    <Link to="/create_day" className="btn btn-outline-secondary">
+                        Day 추가
+                    </Link>
+                </div>
             </div>
-        </div>
+        </nav>
     );
 }

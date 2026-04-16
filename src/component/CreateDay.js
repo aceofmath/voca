@@ -29,9 +29,20 @@ export default function CreateDay() {
     }
 
     return (
-        <div>
-            <h3>현재 일수 : {days.length}일</h3>
-            <button onClick={addDay}>Day 추가</button>
+        <div className="row justify-content-center">
+            <div className="col-md-6 col-lg-4">
+                <div className="card shadow-sm border-0">
+                    <div className="card-body p-4 text-center">
+                        <h2 className="card-title mb-4 fw-bold text-primary">Day 추가</h2>
+                        <h4 className="mb-4 text-secondary">
+                            현재 등록된 일수 : <span className="text-dark">{days.length}일</span>
+                        </h4>
+                        <button className="btn btn-primary btn-lg w-100 shadow-sm fw-bold" onClick={addDay}>
+                            새로운 Day 추가하기
+                        </button>
+                    </div>
+                </div>
+            </div>
         </div>
     );
 }
