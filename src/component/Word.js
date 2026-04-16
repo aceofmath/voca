@@ -39,13 +39,15 @@ export default function Word({ word: w }) {
     return (
         <tr className={isDone ? "off" : ""}>
             <td>
-                <input type="checkbox" checked={isDone} onChange={toggleDone} />
+                <input className="form-check-input" type="checkbox" checked={isDone} onChange={toggleDone} />
             </td>
             <td>{word.eng}</td>
             <td>{isShow && word.kor}</td>
-            <td>
-                <button onClick={toggleShow}>뜻 {isShow ? "숨기기" : "보기"}</button>
-                <button onClick={del} className="btn_del">
+            <td className="text-end">
+                <button className="btn btn-sm btn-info text-white me-2" onClick={toggleShow}>
+                    뜻 {isShow ? "숨기기" : "보기"}
+                </button>
+                <button onClick={del} className="btn btn-sm btn-danger">
                     삭제
                 </button>
             </td>

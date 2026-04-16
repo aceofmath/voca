@@ -23,12 +23,12 @@ export default function DayList() {
     }
 
     return (
-        <ul className="list_day">
+        <div className="d-flex flex-wrap gap-2 justify-content-center">
             {days.map((day) => (
-                <li key={day.id}>
-                    <Link to={`/day/${day.day}`}>Day {day.day}</Link>
-                </li>
+                <Link key={day.id} to={`/day/${day.day}`} className="btn btn-primary btn-lg py-3 px-4 shadow-sm">
+                    Day {day.day}
+                </Link>
             ))}
-        </ul>
+        </div>
     );
 }
